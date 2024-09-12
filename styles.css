@@ -1,0 +1,95 @@
+/* Estilo básico para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* Fondo combinado de corazones y flores amarillas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('fondocombinado.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* Estilo para el contenedor central */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Asegura que los elementos se alineen verticalmente */
+}
+
+/* Estilo para el mensaje */
+.message {
+    text-align: center;
+    color: red; /* Color del texto */
+    font-size: 2.5em; /* Tamaño más grande del texto */
+    font-style: italic; /* Estilo cursiva */
+    font-family: 'Dancing Script', cursive; /* Fuente cursiva */
+    margin: 0;
+}
+
+/* Estilo para los botones */
+.buttons {
+    margin-top: 1em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.7em 1.5em;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 0.5em;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para el mensaje de confirmación */
+#confirmation-message {
+    display: none;
+    margin-top: 2em;
+    font-size: 2.5em; /* Tamaño más grande del texto */
+    color: red; /* Color del texto */
+}
+
+/* Estilo para el contenedor de corazones */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Asegura que los corazones no interfieran con otros elementos */
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 50px; /* Tamaño de la imagen del corazón */
+    height: 50px; /* Tamaño de la imagen del corazón */
+    background-image: url('corazon.png'); /* Ruta a la imagen del corazón */
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+/* Animación de caída de corazones */
+@keyframes fall {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
